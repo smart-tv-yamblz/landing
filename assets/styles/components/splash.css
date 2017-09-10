@@ -1,0 +1,35 @@
+/* Splash */
+
+.splash {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.splash__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.splash__content {
+  flex: 0 0 460px;
+}
+
+.splash__image {
+  flex-shrink: 0;
+  max-width: 100%;
+  display: block;
+}
+
+.splash_left .splash__content {
+  margin-right: 70px;
+}
+
+.splash_center .splash__image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.splash_right .splash__content {
+  margin-left: 70px;
+  order: 1;
+}

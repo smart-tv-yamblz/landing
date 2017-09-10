@@ -1,0 +1,33 @@
+/**
+ ***************************
+ * Builder *****************
+ ***************************
+ */
+
+/**
+ * General components
+ */
+@import url(components/normalize.min.css);
+@import url(components/fonts.css);
+@import url(components/scaffolding.css);
+@import url(components/heading.css);
+@import url(components/splash.css);
+@import url(components/switcher.css);
+@import url(components/columns.css);
+@import url(components/ya-translate.css);
+@import url(components/coming-soon-mark.css);
+@import url(components/icon-list.css);
+
+
+/**
+ * Page components
+ */
+@import url(components/site-header.css);
+@import url(components/new-opportunities.css);
+@import url(components/party.css);
+@import url(components/karaoke.css);
+@import url(components/controlling.css);
+@import url(components/video-clips.css);
+@import url(components/personalization.css);
+@import url(components/platforms.css);
+@import url(components/site-footer.css);

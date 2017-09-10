@@ -1,0 +1,19 @@
+/* Section: new opportunities */
+
+.new-opportunities {
+  margin-top: -80px;
+}
+
+.new-opportunities__image {
+  margin-top: 78px;
+}
+
+.new-opportunities__category-description {
+  margin: 70px auto;
+
+  max-width: 700px;
+
+  text-align: center;
+
+  color: #666666;
+}

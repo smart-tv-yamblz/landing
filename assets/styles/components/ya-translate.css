@@ -1,0 +1,14 @@
+/* Yandex Translate logotype */
+
+.ya-translate {
+  display: inline-flex;
+  align-items: center;
+
+  color: #666666;
+	letter-spacing: 0.2px;
+}
+
+.ya-translate__text {
+  margin-top: -10px;
+  margin-left: 15px;
+}

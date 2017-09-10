@@ -1,0 +1,10 @@
+/* Section: Controlling */
+
+.controlling__platforms {
+  flex-wrap: wrap;
+}
+
+.controlling__platforms > * {
+  width: 50%;
+  margin-top: 50px;
+}

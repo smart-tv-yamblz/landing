@@ -1,0 +1,35 @@
+/* Platforms */
+
+.platforms {
+  margin: 130px 0 120px 0;
+}
+
+.platforms__list {
+  list-style: none;
+  text-align: center;
+}
+
+.platforms__list-item {
+  display: inline-block;
+
+  margin: 0 40px;
+
+  text-align: right;
+  vertical-align: middle;
+}
+
+.platforms__list-image {
+  display: block;
+}
+
+.platforms__list-mark {
+  position: relative;
+}
+
+.platforms__list-item_androidtv .platforms__list-mark {
+  top: -5px;
+}
+
+.platforms__list-item_webos .platforms__list-mark {
+  top: 15px;
+}

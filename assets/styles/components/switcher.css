@@ -1,0 +1,56 @@
+/* Switcher */
+
+.switcher {
+  display: flex;
+
+  justify-content: center;
+}
+
+.switcher__item {
+  background: none;
+  border: none;
+
+  width: 130px;
+  padding: 15px 10px;
+  margin: 0 10px;
+
+  border-radius: 15px;
+
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(127, 127, 127, .4);
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.switcher__item:focus,
+.switcher__item:hover {
+  outline: none;
+
+  box-shadow: 0 0 30px rgba(127, 127, 127, .1);
+}
+
+.switcher__icon {
+  opacity: .4;
+
+  margin: 0 auto 10px auto;
+
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.switcher__item_active {
+  background-color: rgba(73, 130, 226, 0.09);
+  color: #7f7f7f;
+}
+
+.switcher__item_active .switcher__icon {
+  opacity: 1;
+}

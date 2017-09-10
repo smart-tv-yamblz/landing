@@ -1,0 +1,14 @@
+/* Scaffolding */
+
+body,
+button,
+input {
+  font: 300 20px / 1.45 YandexSans, Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  max-width: 1140px;
+
+  padding: 17px 50px;
+  margin: 0 auto;
+}

@@ -1,0 +1,40 @@
+/* Columns */
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+
+  --columns: 3;
+}
+
+.columns__item {
+  width: calc(100% / var(--columns));
+  max-width: 360px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 100px rgba(127, 127, 127, .2);
+}
+
+.columns__item-image {
+  max-width: 100%;
+  display: block;
+}
+
+.columns__item-heading {
+  padding: 30px;
+}
+
+.columns__item-caption {
+  font-size: 24px;
+  color: #222222;
+
+  margin: 0 0 20px 0;
+}
+
+.columns__item-description {
+  font-size: 18px;
+  color: #666666;
+
+  margin: 0;
+}
