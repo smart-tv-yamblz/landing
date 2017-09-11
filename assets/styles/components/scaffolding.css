@@ -1,14 +1,35 @@
 /* Scaffolding */
 
+:root {
+  font-size: 20px;
+}
+
 body,
 button,
 input {
-  font: 300 20px / 1.45 YandexSans, Helvetica, Arial, sans-serif;
+  font: 300 1rem / 1.45 YandexSans, Helvetica, Arial, sans-serif;
 }
 
 .wrapper {
   max-width: 1140px;
 
-  padding: 17px 50px;
+  padding: 0.85rem 2.5rem;
   margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 16px;
+  }
 }

@@ -2,6 +2,7 @@
 
 .icon-list {
   display: flex;
+  justify-content: space-between;
 
   list-style: none;
 
@@ -10,16 +11,16 @@
 }
 
 .icon-list__item {
-  width: 50%;
+  width: 48%;
 
   display: flex;
   align-items: center;
 
-  font-size: 16px;
+  font-size: 0.8rem;
 
 	color: #666666;
 }
 
 .icon-list__icon {
-  margin-right: 20px;
+  margin-right: 1rem;
 }

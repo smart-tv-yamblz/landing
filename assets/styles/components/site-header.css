@@ -1,5 +1,9 @@
 /* Site header */
 
+.site-header {
+  text-align: left;
+}
+
 .site-header__logo {
-  margin-bottom: 24px;
+  margin-bottom: 1.2rem;
 }

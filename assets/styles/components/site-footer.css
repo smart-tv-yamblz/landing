@@ -2,5 +2,12 @@
 
 .site-footer {
   background: #140f1c;
-  padding: 120px 0;
+  padding: 6rem 0;
+}
+
+@media (max-width: 1000px) {
+  .site-footer {
+    padding: 3rem 0;
+    text-align: center;
+  }
 }

@@ -3,6 +3,8 @@
 .splash {
   overflow: hidden;
   max-width: 100%;
+
+  margin-bottom: 4rem;
 }
 
 .splash__wrapper {
@@ -21,7 +23,7 @@
 }
 
 .splash_left .splash__content {
-  margin-right: 70px;
+  margin-right: 3.5rem;
 }
 
 .splash_center .splash__image {
@@ -30,6 +32,35 @@
 }
 
 .splash_right .splash__content {
-  margin-left: 70px;
+  margin-left: 3.5rem;
   order: 1;
+}
+
+@media (max-width: 1000px) {
+  .splash {
+    text-align: center;
+  }
+
+  .splash__wrapper {
+    flex-direction: column;
+  }
+
+  .splash__content {
+    flex-basis: auto;
+    margin-left: 0;
+  }
+
+  .splash_left .splash__content {
+    margin-right: 0;
+  }
+
+  .splash_right .splash__content {
+    margin-left: 0;
+  }
+
+  .splash__image {
+    margin: 2rem 0 0 0 !important;
+    order: 1;
+    flex: auto;
+  }
 }

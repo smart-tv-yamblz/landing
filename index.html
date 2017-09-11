@@ -368,18 +368,20 @@
     </div>
   </footer>
 
-  <script async>
+  <script>
+    var splashes = document.querySelectorAll(".splash_right");
 
-    let splashes = document.querySelectorAll(".splash_right");
+    function alignSplashes(splashes) {
+      [].forEach.call(splashes, function(splash) {
+        var wrapper = splash.querySelector(".splash__content"),
+          image = splash.querySelector(".splash__image");
 
-    [].forEach.call(splashes, splash => {
-      let wrapper = splash.querySelector(".splash__content"),
-        image = splash.querySelector(".splash__image");
+        image.style.marginLeft = wrapper.offsetWidth - image.width + "px";
+      });
+    }
 
-      console.log(wrapper.offsetWidth - image.width);
-
-      image.style.marginLeft = wrapper.offsetWidth - image.width + "px";
-    });
+    setTimeout(function() { alignSplashes(splashes) }, 0);
+    setTimeout(function() { alignSplashes(splashes) }, 1000);
 
   </script>
 </body>

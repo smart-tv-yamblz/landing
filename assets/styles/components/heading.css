@@ -1,14 +1,14 @@
 /* Heading */
 
 .heading__caption {
-  font-size: 50px;
+  font-size: 2.25rem;
   font-weight: 100;
   line-height: 1.12;
-  letter-spacing: -1.2px;
+  letter-spacing: -0.05rem;
 
   color: #222222;
 
-  margin: 0 0 20px 0;
+  margin: 0 0 1rem 0;
 }
 
 .heading__description {
@@ -24,4 +24,14 @@
   max-width: 600px;
 
   margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .heading {
+    text-align: center;
+  }
+
+  .heading__caption {
+    font-size: 2rem;
+  }
 }

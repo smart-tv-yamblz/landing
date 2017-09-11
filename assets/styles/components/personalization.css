@@ -1,5 +1,6 @@
 /* Personalization */
 
 .personalization__users {
-  margin-top: 60px;
+  margin-top: 3rem;
+  max-width: 100%;
 }

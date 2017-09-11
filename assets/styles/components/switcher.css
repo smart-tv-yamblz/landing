@@ -3,6 +3,11 @@
 .switcher {
   display: flex;
 
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
   justify-content: center;
 }
 
@@ -11,12 +16,12 @@
   border: none;
 
   width: 130px;
-  padding: 15px 10px;
-  margin: 0 10px;
+  padding: 0.75rem 0.5rem;
+  margin: 0 0.5rem;
 
-  border-radius: 15px;
+  border-radius: 0.75rem;
 
-  font-size: 12px;
+  font-size: 0.6rem;
   font-weight: bold;
   color: rgba(127, 127, 127, .4);
   text-transform: uppercase;
@@ -34,16 +39,18 @@
 .switcher__item:hover {
   outline: none;
 
-  box-shadow: 0 0 30px rgba(127, 127, 127, .1);
+  box-shadow: 0 0 1.5rem rgba(127, 127, 127, .1);
 }
 
 .switcher__icon {
   opacity: .4;
 
-  margin: 0 auto 10px auto;
+  height: 2rem;
+
+  margin: 0 auto 0.5rem auto;
 
   align-self: flex-start;
-  margin-bottom: 15px;
+  margin-bottom: 0.75rem;
 }
 
 .switcher__item_active {
@@ -53,4 +60,16 @@
 
 .switcher__item_active .switcher__icon {
   opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .switcher {
+    justify-content: flex-start;
+  }
+
+  .switcher__item {
+    width: 100px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
