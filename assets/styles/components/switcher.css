@@ -62,6 +62,14 @@
   opacity: 1;
 }
 
+.switcher-content__item {
+  display: none;
+}
+
+.switcher-content__item_active {
+  display: block;
+}
+
 @media (max-width: 1000px) {
   .switcher {
     justify-content: flex-start;

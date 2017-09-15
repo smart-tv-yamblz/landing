@@ -107,7 +107,13 @@
         </button>
       </div>
 
-      <p class="new-opportunities__category-description">Раздел Музыка. В связи с этим нужно подчеркнуть, что нота монотонно просветляет звукорядный эффект "вау-вау". Голос представляет собой</p>
+      <div class="switcher-content">
+        <p class="switcher-content__item new-opportunities__category-description">Раздел Музыка. В связи с этим нужно подчеркнуть, что нота монотонно просветляет звукорядный эффект "вау-вау". Голос представляет собой</p>
+        <p class="switcher-content__item new-opportunities__category-description">Раздел Радио.</p>
+        <p class="switcher-content__item new-opportunities__category-description">Раздел Видео.</p>
+        <p class="switcher-content__item new-opportunities__category-description">Раздел Вечеринка.</p>
+        <p class="switcher-content__item new-opportunities__category-description">Раздел Караоке.</p>
+      </div>
     </div>
   </section>
 
@@ -367,6 +373,7 @@
   </footer>
 
   <script>
+
     var splashes = document.querySelectorAll(".splash_right");
 
     function alignSplashes(splashes) {
@@ -380,6 +387,53 @@
 
     setTimeout(function() { alignSplashes(splashes) }, 0);
     setTimeout(function() { alignSplashes(splashes) }, 1000);
+
+    /**
+     * Switcher component gets a DOM element as @switcher and operates
+     * with the @content, changing it based on clicked swithcer's item index.
+     *
+     * @param switcher HTMLElement
+     * @param content HTMLElement
+     */
+    function Switcher(switcher, content) {
+      
+      var SWITCHER_ITEM = "switcher__item";
+      var SWITCHER_ITEM_ACTIVE = "switcher__item_active";
+
+      var CONTENT_ITEM = "switcher-content__item";
+      var CONTENT_ITEM_ACTIVE = "switcher-content__item_active";
+
+      var switcherItems = switcher.querySelectorAll("." + SWITCHER_ITEM);
+      var contentItems = content.querySelectorAll("." + CONTENT_ITEM);
+
+      var currentIndex = 0;
+
+      [].forEach.call(switcherItems, function(item, ind) {
+        item.addEventListener("click", processSwitch);
+
+        if (item.classList.contains(SWITCHER_ITEM_ACTIVE))
+          currentIndex = ind;
+      });
+
+      contentItems[currentIndex].classList.add(CONTENT_ITEM_ACTIVE);
+
+      function processSwitch(e) {
+        var index = [].indexOf.call(switcher.children, e.target);
+
+        switcherItems[index].classList.add(SWITCHER_ITEM_ACTIVE);
+        contentItems[index].classList.add(CONTENT_ITEM_ACTIVE);
+
+        clearActive(currentIndex);
+        currentIndex = index;
+      }
+
+      function clearActive(index) {
+        switcherItems[index].classList.remove(SWITCHER_ITEM_ACTIVE);
+        contentItems[index].classList.remove(CONTENT_ITEM_ACTIVE);
+      }
+    }
+
+    new Switcher(document.querySelector(".switcher"), document.querySelector(".switcher-content"));
 
   </script>
 </body>
