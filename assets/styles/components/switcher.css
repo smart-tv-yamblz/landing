@@ -11,6 +11,10 @@
   justify-content: center;
 }
 
+.switcher::-webkit-scrollbar {
+  display: none;
+}
+
 .switcher__item {
   background: none;
   border: none;
