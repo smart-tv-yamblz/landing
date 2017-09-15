@@ -418,6 +418,9 @@
       contentItems[currentIndex].classList.add(CONTENT_ITEM_ACTIVE);
 
       function processSwitch(e) {
+        if (e.target.classList.contains(SWITCHER_ITEM_ACTIVE))
+          return;
+
         var index = [].indexOf.call(switcher.children, e.target);
 
         switcherItems[index].classList.add(SWITCHER_ITEM_ACTIVE);
