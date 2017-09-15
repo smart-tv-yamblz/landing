@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <title><!-- @@var = title --></title>
+
+  <meta name="description" content="Открывайте новую музыку каждый день. Лента с персональными рекомендациями и музыкальными новинками, радио, подборки на любой вкус, удобное управление своей коллекцией. Миллионы композиций бесплатно и в хорошем качестве на вашем Smart TV.">
+
+  <link rel="image_src" href="https://music.yandex.ru/blocks/html-head/og-image.png">
+
+  <meta property="og:title" content="Яндекс.Музыка на Smart TV">
+  <meta property="og:description" content="Открывайте новую музыку каждый день. Лента с персональными рекомендациями и музыкальными новинками, радио, подборки на любой вкус, удобное управление своей коллекцией. Миллионы композиций бесплатно и в хорошем качестве на вашем Smart TV.">
+  <meta property="og:image" content="https://music.yandex.ru/blocks/html-head/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smart-tv-yamblz.github.io/landing/">
+
+  <link rel="icon" type="image/png" href="https://music.yandex.ru/favicon16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="https://music.yandex.ru/favicon32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="https://music.yandex.ru/blocks/common/apple-touch.60x60.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://music.yandex.ru/blocks/common/apple-touch.76x76.ico">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://music.yandex.ru/blocks/common/apple-touch.120x120.ico">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://music.yandex.ru/blocks/common/apple-touch.152x152.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://music.yandex.ru/blocks/common/apple-touch.180x180.ico">
+  <link rel="mask-icon" sizes="any" href="https://music.yandex.ru/blocks/icon/website.svg" color="#FF0000">
+</head>
+<body>
+
+  <!-- @@placeholder = content -->
+
+  <script>
+
+    var splashes = document.querySelectorAll(".splash_right");
+
+    function alignSplashes(splashes) {
+      [].forEach.call(splashes, function(splash) {
+        var wrapper = splash.querySelector(".splash__content"),
+          image = splash.querySelector(".splash__image");
+
+        image.style.marginLeft = wrapper.offsetWidth - image.width + "px";
+      });
+    }
+
+    setTimeout(function() { alignSplashes(splashes) }, 0);
+    setTimeout(function() { alignSplashes(splashes) }, 1000);
+
+    /**
+     * Switcher component gets a DOM element as @switcher and operates
+     * with the @content, changing it based on clicked swithcer's item index.
+     *
+     * @param switcher HTMLElement
+     * @param content HTMLElement
+     */
+    function Switcher(switcher, content) {
+      
+      var SWITCHER_ITEM = "switcher__item";
+      var SWITCHER_ITEM_ACTIVE = "switcher__item_active";
+
+      var CONTENT_ITEM = "switcher-content__item";
+      var CONTENT_ITEM_ACTIVE = "switcher-content__item_active";
+
+      var switcherItems = switcher.querySelectorAll("." + SWITCHER_ITEM);
+      var contentItems = content.querySelectorAll("." + CONTENT_ITEM);
+
+      var currentIndex = 0;
+
+      [].forEach.call(switcherItems, function(item, ind) {
+        item.addEventListener("click", processSwitch);
+
+        if (item.classList.contains(SWITCHER_ITEM_ACTIVE))
+          currentIndex = ind;
+      });
+
+      contentItems[currentIndex].classList.add(CONTENT_ITEM_ACTIVE);
+
+      function processSwitch(e) {
+        if (e.target.classList.contains(SWITCHER_ITEM_ACTIVE))
+          return;
+
+        var index = [].indexOf.call(switcher.children, e.target);
+
+        switcherItems[index].classList.add(SWITCHER_ITEM_ACTIVE);
+        contentItems[index].classList.add(CONTENT_ITEM_ACTIVE);
+
+        clearActive(currentIndex);
+        currentIndex = index;
+      }
+
+      function clearActive(index) {
+        switcherItems[index].classList.remove(SWITCHER_ITEM_ACTIVE);
+        contentItems[index].classList.remove(CONTENT_ITEM_ACTIVE);
+      }
+    }
+
+    new Switcher(document.querySelector(".switcher"), document.querySelector(".switcher-content"));
+
+  </script>
+</body>
+</html>
