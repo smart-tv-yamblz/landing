@@ -22,6 +22,7 @@
 
 .platforms__list-mark {
   position: relative;
+  z-index: 1;
 }
 
 .platforms__list-item_androidtv .platforms__list-mark {
@@ -30,6 +31,12 @@
 
 .platforms__list-item_webos .platforms__list-mark {
   top: 0.75rem;
+}
+
+.platforms__list-item_androidtv .platforms__list-image,
+.platforms__list-item_webos .platforms__list-image {
+  filter: grayscale(1);
+  opacity: .3;
 }
 
 @media (max-width: 1000px) {
