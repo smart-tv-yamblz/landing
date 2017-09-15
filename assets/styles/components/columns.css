@@ -30,6 +30,8 @@
 
 .columns__item-caption {
   font-size: 1.2rem;
+  font-weight: 300;
+
   color: #222222;
 
   margin: 0 0 1rem 0;
