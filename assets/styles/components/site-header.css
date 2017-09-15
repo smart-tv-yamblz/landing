@@ -7,3 +7,13 @@
 .site-header__logo {
   margin-bottom: 1.2rem;
 }
+
+.site-header__content {
+  margin-top: -18%;
+}
+
+@media (max-width: 1000px) {
+  .site-header__content {
+    margin-top: 0;
+  }
+}
