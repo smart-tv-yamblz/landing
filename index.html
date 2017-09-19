@@ -48,7 +48,10 @@
       var currentIndex = 0;
 
       [].forEach.call(switcherItems, function(item, ind) {
-        item.addEventListener("click", processSwitch);
+        item.addEventListener("click", function() {
+          processSwitch(item);
+        });
+
         item.setAttribute("data-index", ind);
 
         if (item.classList.contains(SWITCHER_ITEM_ACTIVE))
@@ -57,11 +60,11 @@
 
       contentItems[currentIndex].classList.add(CONTENT_ITEM_ACTIVE);
 
-      function processSwitch(e) {
-        if (e.target.classList.contains(SWITCHER_ITEM_ACTIVE))
+      function processSwitch(item) {
+        if (item.classList.contains(SWITCHER_ITEM_ACTIVE))
           return;
 
-        var index = parseInt(e.target.getAttribute("data-index"));
+        var index = parseInt(item.getAttribute("data-index"));
 
         switcherItems[index].classList.add(SWITCHER_ITEM_ACTIVE);
         contentItems[index].classList.add(CONTENT_ITEM_ACTIVE);
