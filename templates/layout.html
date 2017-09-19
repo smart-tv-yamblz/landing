@@ -32,19 +32,15 @@
 
   <script>
 
-    var splashes = document.querySelectorAll(".splash_right");
+    // Right splashes alignment
+    [].forEach.call(document.querySelectorAll(".splash_right"), function(splash) {
+      var wrapper = splash.querySelector(".splash__content"),
+        image = splash.querySelector(".splash__image");
 
-    function alignSplashes(splashes) {
-      [].forEach.call(splashes, function(splash) {
-        var wrapper = splash.querySelector(".splash__content"),
-          image = splash.querySelector(".splash__image");
-
+      image.addEventListener("load", function() {
         image.style.marginLeft = wrapper.offsetWidth - image.width + "px";
       });
-    }
-
-    setTimeout(function() { alignSplashes(splashes) }, 0);
-    setTimeout(function() { alignSplashes(splashes) }, 1000);
+    });
 
     /**
      * Switcher component gets a DOM element as @switcher and operates
@@ -68,6 +64,7 @@
 
       [].forEach.call(switcherItems, function(item, ind) {
         item.addEventListener("click", processSwitch);
+        item.setAttribute("data-index", ind);
 
         if (item.classList.contains(SWITCHER_ITEM_ACTIVE))
           currentIndex = ind;
@@ -79,7 +76,7 @@
         if (e.target.classList.contains(SWITCHER_ITEM_ACTIVE))
           return;
 
-        var index = [].indexOf.call(switcher.children, e.target);
+        var index = parseInt(e.target.getAttribute("data-index"));
 
         switcherItems[index].classList.add(SWITCHER_ITEM_ACTIVE);
         contentItems[index].classList.add(CONTENT_ITEM_ACTIVE);
