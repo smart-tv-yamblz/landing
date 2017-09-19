@@ -32,26 +32,32 @@
 
   <script>
 
+    function adjustNaturalImageWidth(i) {
+      i.style.maxWidth = i.naturalWidth + "px";
+    }
+
+    function adjustSplashImage(wrWidth, i) {
+      i.style.marginLeft = wrWidth - i.width + "px";
+    }
+
     // Right splashes alignment
     [].forEach.call(document.querySelectorAll(".splash_right"), function(splash) {
       var wrapper = splash.querySelector(".splash__content"),
         image = splash.querySelector(".splash__image");
 
+      adjustSplashImage(wrapper.offsetWidth, image);
+
       image.addEventListener("load", function() {
-        image.style.marginLeft = wrapper.offsetWidth - image.width + "px";
+        adjustSplashImage(wrapper.offsetWidth, image);
       });
     });
 
     // Platforms Firefox Bug
     [].forEach.call(document.querySelectorAll(".platforms__list-image"), function(image) {
-      function updateNaturalWidth(i) {
-        i.style.maxWidth = i.naturalWidth + "px";
-      }
-
-      updateNaturalWidth(image);
+      adjustNaturalImageWidth(image);
 
       image.addEventListener("load", function() {
-        updateNaturalWidth(image);
+        adjustNaturalImageWidth(image);
       });
     });
 
