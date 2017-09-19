@@ -42,6 +42,19 @@
       });
     });
 
+    // Platforms Firefox Bug
+    [].forEach.call(document.querySelectorAll(".platforms__list-image"), function(image) {
+      function updateNaturalWidth(i) {
+        i.style.maxWidth = i.naturalWidth + "px";
+      }
+
+      updateNaturalWidth(image);
+
+      image.addEventListener("load", function() {
+        updateNaturalWidth(image);
+      });
+    });
+
     /**
      * Switcher component gets a DOM element as @switcher and operates
      * with the @content, changing it based on clicked swithcer's item index.
